@@ -1,8 +1,8 @@
 const Clarifai = require('clarifai');
 
-const API_KEY = process.env.API_KEY;
+// const API_KEY = process.env.API_KEY;
 const app = new Clarifai.App({
-  apiKey: API_KEY
+  apiKey: '6d7b22998e9640a7af9de5a903f017a9'
 });
 
 const handleApiCall = (req, res) => {
@@ -33,3 +33,4 @@ module.exports = {
   handleImage,
   handleApiCall
 };
+
