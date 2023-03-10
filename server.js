@@ -40,22 +40,3 @@ app.listen(3000, ()=> {    //hosts on port 3k and second parameter is a function
 })
 
 
-//root route --> response with 'this is working'
-//register route --> POST the new user and return it with response
-//sign in route --> POST data/json and then respond with 'success/fail'
-//profile/:userId --> GET user
-//image --> PUT --> updates the count for the rank
-
-
-//bcrypt usage:
-// bcrypt.hash("bacon", null, null, function(err, hash) {
-//   // Store hash in your password DB.
-// });
-
-// // Load hash from your password DB.
-// bcrypt.compare("bacon", hash, function(err, res) {
-//   // res == true
-// });
-// bcrypt.compare("veggies", hash, function(err, res) {
-//   // res = false
-// });
