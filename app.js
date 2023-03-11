@@ -1,4 +1,3 @@
-const { request } = require('express');
 const express = require('express'); //import express
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
@@ -36,8 +35,8 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcry
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db) })
 app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
-app.listen(port, ()=> {    //hosts on port 3k and second parameter is a function that runs after the server is up.
-  console.log('app OK in 3000')
+app.listen(8080, ()=> {    //hosts on port 3k and second parameter is a function that runs after the server is up.
+  console.log(`app OK in 8080`)
 })
 
 
