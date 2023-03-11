@@ -8,17 +8,11 @@ const profile = require('./controllers/profile')
 const image = require('./controllers/image')
 
 const PORT = process.env.PORT;
-const PASSWORD = process.env.PASSWORD;
 
-const db = knex({     //connecting the db to our server with knex
+const db = knex({     //connecting the db to our server with knex. DATABASE_URL declared in env vars.
   client: 'pg',
-  connection: {
-    host: 'dpg-cg6dpdt269v5l65vp8dg-a',
-    user: 'facerecon_user',
-    password: PASSWORD,
-    database: 'facerecon'
-  }
-});
+  connection: DATABASE_URL
+  });
 
 // db.select('*').from('users').then(data => console.log(data));
 
