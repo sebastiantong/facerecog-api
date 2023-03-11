@@ -8,6 +8,7 @@ const profile = require('./controllers/profile')
 const image = require('./controllers/image')
 
 const PORT = process.env.PORT;
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const db = knex({     //connecting the db to our server with knex. DATABASE_URL declared in env vars.
   client: 'pg',
