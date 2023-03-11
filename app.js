@@ -7,7 +7,7 @@ const signin = require('./controllers/signin')
 const profile = require('./controllers/profile')
 const image = require('./controllers/image')
 
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 
 const db = knex({     //connecting the db to our server with knex
   client: 'pg',
@@ -35,8 +35,8 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcry
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db) })
 app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
-app.listen(3000, ()=> {    //hosts on port 3k and second parameter is a function that runs after the server is up.
-  console.log(`app OK in 3000`)
+app.listen(PORT, ()=> {    //hosts on port 3k and second parameter is a function that runs after the server is up.
+  console.log(`app OK in ${PORT}`)
 })
 
 
