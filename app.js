@@ -11,9 +11,11 @@ const PORT = process.env.PORT || 3000;
 
 const db = knex({     //connecting the db to our server with knex. DATABASE_URL declared in env vars.
   client: 'pg',
-  connection: process.env.PG_CONNECTION_STRING,
-  ssl: true
-  });
+  connection: {
+    connectionToString: process.env.PG_CONNECTION_STRING,
+    ssl: true
+  }
+});
 
 // db.select('*').from('users').then(data => console.log(data));
 
