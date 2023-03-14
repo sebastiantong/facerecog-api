@@ -12,12 +12,10 @@ const PORT = process.env.PORT || 3000;
 const db = knex({     //connecting the db to our server with knex. DATABASE_URL declared in env vars.
   client: 'pg',
   connection: {
-    connectionToString: process.env.PG_CONNECTION_STRING,
-    ssl: true
+    connectionString: process.env.PG_CONNECTION_STRING,
+    ssl:true
   }
 });
-
-// db.select('*').from('users').then(data => console.log(data));
 
 const app = express(); //run express
 
@@ -36,6 +34,3 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res) })
 app.listen(PORT, ()=> {    //hosts on port declared by env, other wise on 3k and second parameter is a function that runs after the server is up.
   console.log(`app OK in ${PORT}`)
 })
-
-
-
