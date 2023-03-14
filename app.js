@@ -9,6 +9,9 @@ const image = require('./controllers/image')
 
 const PORT = process.env.PORT || 3000;
 
+//solves ssl/tsl self signed certificate error
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 const db = knex({     //connecting the db to our server with knex. DATABASE_URL declared in env vars.
   client: 'pg',
   connection: {
